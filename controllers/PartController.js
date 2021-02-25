@@ -3,6 +3,9 @@ class Controller {
 
     static show(req,res){
         Subject.findAll({
+            where: {
+                id : +req.params.id
+            },
             include: [{
                 model: Part
             }]
@@ -11,7 +14,7 @@ class Controller {
             data=>{
                 // console.log(data)
                 // res.send(data)
-                res.render('home',{data})
+                res.render('parts',{data})
             }
         )
         .catch(
@@ -22,7 +25,7 @@ class Controller {
     }
 
     static add(req,res){
-        res.render('addSubject')
+        res.render('addPart')
     }
 
     static addPost(req,res){

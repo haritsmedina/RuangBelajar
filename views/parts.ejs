@@ -8,28 +8,22 @@
 </head>
 
 <body>
-
-    <h1>List Subjects</h1>
+    
+    <h1><%= data[0].category%></h1>
     <a href="/add/subject"> add </a>
     <table border="1">
         <thead>
-            <th>Id</th>
-            <th>description</th>
-            <th>category</th>
-            <th>parts</th>
+            <th>Parts</th>
+            <th>videoLink</th>
             <th>action</th>            
         </thead>
-        
         <tbody>
-            <% data.forEach((element, index) =>{ %>
+            <% data[0].Parts.forEach((element) =>{ %>
                 <tr>
-                    <td><%= index + 1%></td>
-                    <td><%= element.description %></td>
-                    <td><%= element.category%></td>      
-                    <td><%= element.Parts.length%></td>                    
-              
+                    <td><%= element.id%></td>
+                    <td><%= element.videoLink%></td>              
                     <td><a href="/movies/<%=element.id%>/edit"> edit</a>
-                        <a href="subject/<%=element.id%>/parts">Add Subject</a>
+                        
                         <a href="/subject/<%=element.id%>/delete"> delete</a></td>
                 </tr>
                 <% }) %>
