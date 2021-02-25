@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "postgres",
-    "password": "Aisobi",
+    "password": "postgres",
     "database": "RuangBelajar",
     "host": "localhost",
     "dialect": "postgres",
-    "port": 5433
+    "port": 5432
   },
   "test": {
     "username": "root",

@@ -49,10 +49,12 @@ class Controller {
                 // console.log(user, 'INI USER')
 
                 if(compare(login.password,user.password)&&(user.role === 'admin')){
-                    req.session.admin = true
+                    req.session.admin = true 
+                    // console.log('masuk admin');
                     res.redirect('/add/Subject')
                 }else if(compare(login.password,user.password)&&(user.role ==='user')){
                     req.session.admin = false
+                    // console.log('masuk user');
                     res.redirect('/add/Subject')
                 }else {
                     console.log('gaktuh masuk sini')
