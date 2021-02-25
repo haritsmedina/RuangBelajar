@@ -70,6 +70,8 @@ class Controller {
 
         )
     }
+
+    static logout
 }
 
 module.exports = Controller
