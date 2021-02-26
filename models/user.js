@@ -5,6 +5,9 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
+    combineName() {
+      return`${this.firstName} ${this.lastName}`
+    }
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.

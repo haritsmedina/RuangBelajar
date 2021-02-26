@@ -14,10 +14,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Homework.init({
-    status: DataTypes.STRING
+    status: DataTypes.STRING,
+    SubjectId: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Homework',
   });
+  Homework.beforeCreate((instance, options) => {
+    let result = `Unfinished`
+
+    instance.status = result
+  })
   return Homework;
 };

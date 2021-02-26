@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,28 +7,26 @@
     <title>Document</title>
 </he
 <body>
-    <h1>List Subjects</h1>
+    <h1>List User</h1>
     <a href="/add/subject"> add </a>
     <table border="1">
         <thead>
             <th>Id</th>
-            <th>description</th>
-            <th>category</th>
-            <th>parts</th>
+            <th>Name</th>
+            <th>Email</th>
             <th>action</th>            
         </thead>
         
         <tbody>
             <% data.forEach((element, index) =>{ %>
                 <tr>
-                    <td><%= index + 1%></td>
-                    <td><%= element.description %></td>
-                    <td><%= element.category%></td>      
-                    <td><%= element.Parts.length%></td>                    
-              
-                    <td><a href="/movies/<%=element.id%>/edit"> edit</a>
-                        <a href="subject/<%=element.id%>/parts">Add Subject</a>
-                        <a href="/subject/<%=element.id%>/delete"> delete</a></td>
+                    <td><%= element.id%></td>
+                    <td><%= element.combineName() %></td>
+                    <td><%= element.email%></td>     
+                    <td>
+                        <a href="/user/<%=element.id%>/checkTask"> Check Task</a></td>
+                    </td>          
+                     
                 </tr>
                 <% }) %>
 
